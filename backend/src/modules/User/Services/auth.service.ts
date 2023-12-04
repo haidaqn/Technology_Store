@@ -19,15 +19,14 @@ export class AuthService {
     register = async (userDto: CreateUserDto) => {
         const user = await this.userService.createUser(userDto);
         const token = await this.jwtService.signAsync({ email: user.email });
-        await this.userRepository.create(user);
-        const res = { email: user.email, token };
+        const res = { data: user, token };
         return BaseResponse<AuthResponse>(res, 'ok', HttpStatus.OK, true);
     };
 
     login = async (loginUserDto: LoginUserDto) => {
         const user = await this.userService.findByLogin(loginUserDto);
-        const token = await this.jwtService.signAsync({ email: user.email });
-        return BaseResponse<AuthResponse>({ email: user.email, token }, 'ok', HttpStatus.OK, true);
+        const token = await this.jwtService.signAsync({ email: user.email, role: user.role });
+        return BaseResponse<AuthResponse>({ data: user, token }, 'ok', HttpStatus.OK, true);
     };
 
     checkEmailUser = async (email: string) => {
@@ -58,7 +57,6 @@ export class AuthService {
                 }
             );
             await this.userService.update({ email: email }, { refreshToken: refreshToken });
-
             return {
                 expiresIn: process.env.EXPIRESIN,
                 accessToken,

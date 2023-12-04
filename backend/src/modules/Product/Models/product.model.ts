@@ -9,7 +9,7 @@ const ProductSchema = new Schema(
         },
         slug: {
             type: String,
-            required: true,
+            // required: true,
             lowercase: true
         },
         description: {

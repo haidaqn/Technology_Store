@@ -1,4 +1,5 @@
 import { IsNotEmpty } from 'class-validator';
+import { User } from '../Models/user.model';
 
 export class CreateUserDto {
     @IsNotEmpty()
@@ -24,6 +25,11 @@ export class EmailDto {
 }
 
 export interface AuthResponse {
+    data: User;
+    token: string;
+}
+
+export interface AuthResponseRegister {
     email: string;
     token: string;
 }

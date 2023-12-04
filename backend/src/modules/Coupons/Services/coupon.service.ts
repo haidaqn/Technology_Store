@@ -66,7 +66,7 @@ export class CouponService {
         return {
             data: response ? response : null,
             success: response ? true : false,
-            status: response ? HttpStatus.OK : 400,
+            status: response ? HttpStatus.OK : HttpStatus.BAD_REQUEST,
             messgae: response ? 'Successfully delete coupon' : 'Delete a coupon failed'
         };
     }

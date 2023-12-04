@@ -12,11 +12,10 @@ export class UserService {
         const userInDb = await this.userRepository.findByCondition({
             email: userDto.email
         });
-        console.log(userInDb);
         if (userInDb) {
             throw new HttpException('Email already used to register', HttpStatus.BAD_REQUEST);
         }
-        return userDto;
+        return await this.userRepository.create(userDto);
     }
 
     findByLogin = async ({ email, password }: LoginUserDto) => {
