@@ -8,6 +8,7 @@ import Typed from 'react-typed';
 import type { Engine } from 'tsparticles-engine';
 import { loadSlim } from 'tsparticles-slim';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 export default function Welcome() {
     const { theme } = useTheme();
@@ -15,7 +16,6 @@ export default function Welcome() {
     const particlesInit = useCallback(async (engine: Engine) => {
         await loadSlim(engine);
     }, []);
-
 
     useEffect(() => {
         // Set a timeout to show the Typed component after 2 seconds
@@ -31,24 +31,18 @@ export default function Welcome() {
             <LoadingPage />
             <header>
                 <div className="py-5 px-[50px] flex items-center justify-between ">
-                    <a href="/" className="cursor-pointer inline-block">
-                        {theme == 'light' ? (
-                            <img className="w-[300px]" src="/assets/logo-black.jpg" />
-                        ) : (
-                            <img className="w-[300px]" src="/assets/logo-white.png" />
-                        )}
-                    </a>
+                    <div className=""></div>
                     <div className="flex items-center gap-5">
-                        <a
-                            href="https://whiteneurons.com"
-                            target="_blank"
+                        <Link
+                            to="/store"
+                            // tLinkrget="_blank"
                             rel="noopener noreferrer"
                             className="text-lg mr-[20px] hover:underline font"
                         >
                             Trang chủ
-                        </a>
+                        </Link>
                         <a
-                            href="https://whiteneurons.com/contact.html"
+                            href="https://www.facebook.com/haidang02.03"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-lg mr-[20px] hover:underline font"
@@ -65,7 +59,6 @@ export default function Welcome() {
             <Particles
                 id="tsparticles"
                 init={particlesInit}
-           
                 options={{
                     fpsLimit: 120,
                     interactivity: {
@@ -131,8 +124,8 @@ export default function Welcome() {
                             {showTyped && (
                                 <Typed
                                     strings={[
-                                        'Chào mừng đến với ứng dụng quản trị nhân sự',
-                                        'Một sản phẩm của công ty White Neuron',
+                                        'Chào mừng đến với ứng dụng cửa hàng công nghệ',
+                                        'Một sản phẩm của Phương Hải Đăng',
                                     ]}
                                     typeSpeed={60}
                                     backSpeed={40}
@@ -142,11 +135,12 @@ export default function Welcome() {
                             )}
                         </h1>
                         <p className="leading-[1.875] mb-7 px-[10px]">
-                            Ứng dụng được phát triển và xây dựng cho cục bộ không nhằm mục đích kiếm
-                            tiền. Mọi thắc mắc xin liên hệ với công ty để được hướng dẫn và giải
-                            quyết!{' '}
+                            Ứng dụng được phát triển và xây dựng cho môn học ở trường không nhằm mục
+                            đích kiếm tiền. Mọi thắc mắc xin liên hệ với{' '}
+                            <span className="text-red-500">haidang02032003@gmail.com</span> để được
+                            hướng dẫn và giải quyết!{' '}
                         </p>
-                        <a href="/login">
+                        <a href="/store">
                             <Button
                                 className="w-[250px] h-[50px] border-black dark:border-white"
                                 variant={'outline'}
