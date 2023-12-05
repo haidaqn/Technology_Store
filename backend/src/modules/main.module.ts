@@ -6,6 +6,7 @@ import { CategoriesModule } from './Categories/categories.module';
 import { CouponModule } from './Coupons/coupon.module';
 import { ProductModule } from './Product/product.module';
 import { JwtModule } from '@nestjs/jwt';
+import { OrderModule } from './Orders/orders.module';
 import { IsAdminMiddleware, VerifyAccessTokenMiddleware } from 'src/shared/middlewares/verifyAccessToken.middleware';
 
 @Module({
@@ -16,6 +17,7 @@ import { IsAdminMiddleware, VerifyAccessTokenMiddleware } from 'src/shared/middl
         CategoriesModule,
         CouponModule,
         ProductModule,
+        OrderModule,
         JwtModule.register({ secret: 'khoalahaidang2003x@@@@@abc' })
     ],
     providers: [],
