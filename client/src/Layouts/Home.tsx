@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from '@/features/home/Home';
+import Home from '@/features/home';
 
 export default function HomeRouter() {
     return (

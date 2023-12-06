@@ -21,23 +21,25 @@ export function LoginPage() {
                 <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r  lg:flex">
                     <div className="absolute inset-0 bg-zinc-800" />
                     <div className="relative z-20 flex items-center text-lg font-medium">
-                        <img
+                        {/* <img
                             src="/assets/logo-white.png"
                             alt="logo-white-neuron"
                             className="w-[300px]"
-                        />
+                        /> */}
                     </div>
                     <div className="relative z-20 mt-auto">
                         <blockquote className="space-y-2">
                             <p className="text-lg">
-                                &ldquo;Welcome to White Neuron Smart Technology & IT Solutions,
-                                where innovation meets excellence in the ever-evolving landscape of
-                                technology. As a leading company at the forefront of smart
-                                technology and IT solutions, White Neuron is dedicated to
-                                transforming businesses through cutting-edge innovations and
-                                intelligent solutions.&rdquo;
+                                &ldquo;Welcome to haidaqn, your destination for cutting-edge gadgets
+                                and technology marvels! Nestled at the intersection of innovation
+                                and customer satisfaction, haidaqn is not just a store; it's an
+                                experience. As a premier establishment in the realm of technology
+                                retail, we take pride in curating a selection that encompasses the
+                                latest trends and top-tier brands.&rdquo;
                             </p>
-                            <footer className="text-sm">White Neuron</footer>
+                            <footer className="text-sm">
+                                <a href="https://github.com/haidaqn">haidaqn</a>
+                            </footer>
                         </blockquote>
                     </div>
                 </div>
