@@ -4,11 +4,27 @@ export interface LoginForm {
 }
 
 export interface RegisterForm {
-    name: string;
     email: string;
-    password: string;
-    rePassword: string;
+    name: string;
     mobile: string;
+    password: string;
+    passwordConfirm: string;
 }
 
-export interface User {}
+export interface User {
+    name: string;
+    password: string;
+    email: string;
+    mobile: string;
+    avatar: string;
+    address: string;
+    role: number;
+    cart: [
+        {
+            product: string;
+            quantity: number;
+            color: string;
+        }
+    ];
+    isBlocked: boolean;
+}

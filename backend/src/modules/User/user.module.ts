@@ -20,9 +20,7 @@ import { UserService } from './services/user.service';
             }
         ]),
         PassportModule.register({
-            defaultStrategy: 'jwt',
-            property: 'user',
-            session: false
+            defaultStrategy: 'jwt'
         }),
         JwtModule.registerAsync({
             imports: [ConfigModule],

@@ -3,22 +3,21 @@ import { ModeToggle } from '@/components/mode-toggle';
 import { useTheme } from '@/components/theme-provider';
 import { Button } from '@/components/ui/button';
 import { useCallback, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Particles from 'react-tsparticles';
 import Typed from 'react-typed';
 import type { Engine } from 'tsparticles-engine';
 import { loadSlim } from 'tsparticles-slim';
 import './styles.css';
-import { Link } from 'react-router-dom';
 
 export default function Welcome() {
     const { theme } = useTheme();
-    const [showTyped, setShowTyped] = useState(false);
+    const [showTyped, setShowTyped] = useState(true);
     const particlesInit = useCallback(async (engine: Engine) => {
         await loadSlim(engine);
     }, []);
 
     useEffect(() => {
-        // Set a timeout to show the Typed component after 2 seconds
         const timeoutId = setTimeout(() => {
             setShowTyped(true);
         }, 2000);
@@ -35,23 +34,22 @@ export default function Welcome() {
                     <div className="flex items-center gap-5">
                         <Link
                             to="/store"
-                            // tLinkrget="_blank"
                             rel="noopener noreferrer"
                             className="text-lg mr-[20px] hover:underline font"
                         >
                             Trang chủ
                         </Link>
                         <a
-                            href="https://www.facebook.com/haidang02.03"
                             target="_blank"
+                            href="https://www.facebook.com/haidang02.03"
                             rel="noopener noreferrer"
                             className="text-lg mr-[20px] hover:underline font"
                         >
                             Liên hệ
                         </a>
-                        <a href="/login">
+                        <Link to="/auth/login">
                             <Button>Đăng nhập</Button>
-                        </a>
+                        </Link>
                         <ModeToggle />
                     </div>
                 </div>
@@ -125,7 +123,7 @@ export default function Welcome() {
                                 <Typed
                                     strings={[
                                         'Chào mừng đến với ứng dụng cửa hàng công nghệ',
-                                        'Một sản phẩm của Phương Hải Đăng',
+                                        'Sản phẩm của Phương Hải Đăng',
                                     ]}
                                     typeSpeed={60}
                                     backSpeed={40}

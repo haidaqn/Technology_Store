@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { BrandRepository } from '../Repositories/brand.repository';
 import { BrandDto } from '../Dto/brand.dto';
-
+import { BaseResponse } from 'src/shared/base/base.response';
 @Injectable()
 export class BrandService {
     constructor(private readonly brandRepository: BrandRepository) {}

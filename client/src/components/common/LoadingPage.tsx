@@ -4,14 +4,12 @@ export const LoadingPage = () => {
     const [showLoading, setShowLoading] = useState(false);
 
     useEffect(() => {
-        // Set a timeout to add the loading-page class after 2 seconds
         const timeoutId = setTimeout(() => {
             setShowLoading(true);
         }, 2000);
 
-        // Cleanup the timeout when the component unmounts
         return () => clearTimeout(timeoutId);
-    }, []); // Empty dependency array means this effect runs once after the initial render
+    }, []);
 
     return (
         <div

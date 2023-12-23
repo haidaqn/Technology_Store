@@ -25,7 +25,8 @@ export class AuthService {
 
     login = async (loginUserDto: LoginUserDto) => {
         const user = await this.userService.findByLogin(loginUserDto);
-        const token = await this.jwtService.signAsync({ email: user.email, role: user.role });
+        const token = await this.jwtService.signAsync({ email: user.email, role: user.role, id: user._id });
+        // return '123';
         return BaseResponse<AuthResponse>({ data: user, token }, 'ok', HttpStatus.OK, true);
     };
 

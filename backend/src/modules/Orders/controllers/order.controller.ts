@@ -1,26 +1,18 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get, Query, Req, UseGuards } from '@nestjs/common';
+import { OrderService } from '../Services/order.service';
+import { PagingOrder } from '../Dto/order.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('order')
 export class OrderController {
-    // constructor(private readonly brandService: BrandService) {}
-    // @Get('getAll')
-    // async getAllBrand(@Query() { page, limit }: PaginationBrandDto) {
-    //     return await this.brandService.GetAllBrand(page, limit);
-    // }
-    // @Get(':id')
-    // async GetBrandById(@Param('id') id: string) {
-    //     return await this.brandService.GetBrandById(id);
-    // }
-    // @Post('createBrand')
-    // async createBrand(@Body() { title }: BrandDto) {
-    //     return await this.brandService.CreateBrand(title);
-    // }
-    // @Delete('delete/:id')
-    // async deleteBrand(@Param('id') id: string) {
-    //     return await this.brandService.DeleteBrand(id);
-    // }
-    // @Patch('update/:id')
-    // async updateBrand(@Param('id') id: string, @Body() { title }: BrandDto) {
-    //     return await this.brandService.UpdateBrand(id, title);
-    // }
+    constructor(private readonly orderService: OrderService) {}
+    @Get('admin/getAll')
+    async getAllOrderByAdmin(@Query() { page, limit }: PagingOrder) {
+        return await this.orderService.getAllOrderByAdmin(page, limit);
+    }
+
+    @Get('user/getAll')
+    async getAllOrderByUser(@Query() { page, limit }: PagingOrder) {
+        return await this.orderService.getAllOrderByUserId(page, limit);
+    }
 }

@@ -1,20 +1,19 @@
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './app.css';
-import { LoginPage } from './features/auth/pages/LoginPage';
-import Welcome from './features/welcome';
 import { NotFound } from './components/common';
-import HomeRouter from './Layouts/Home';
+import Welcome from './features/welcome';
+import { AuthRouter, HomeRouter } from './Layouts';
+
 function App() {
     return (
         <ThemeProvider defaultTheme="light" storageKey="theme">
             <div className="w-screen h-screen relative">
                 <Routes>
-                    <Route path="/" element={<Navigate to="/welcome" />} />
-                    <Route path="/welcome" element={<Welcome />} />
-                    <Route path="/login" element={<LoginPage />} />
-                    <Route path="/store" element={<HomeRouter />} />
-                    <Route path="*" element={<NotFound />}></Route>
+                    <Route path="/" element={<Welcome />} />
+                    <Route path="/auth/*" element={<AuthRouter />} />
+                    <Route path="/store/*" element={<HomeRouter />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
         </ThemeProvider>
@@ -22,3 +21,4 @@ function App() {
 }
 
 export default App;
+// https://digital-world-2.myshopify.com/

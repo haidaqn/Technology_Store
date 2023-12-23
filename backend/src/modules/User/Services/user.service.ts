@@ -2,6 +2,7 @@ import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { CreateUserDto, LoginUserDto } from '../dto/user.dto';
 import { UserRepository } from '../repositories/user.repository';
 import * as bcrypt from 'bcrypt';
+import { User } from '../Models/user.model';
 
 @Injectable()
 export class UserService {
@@ -19,14 +20,14 @@ export class UserService {
     }
 
     findByLogin = async ({ email, password }: LoginUserDto) => {
-        const user = await this.userRepository.findByCondition({
+        const user = (await this.userRepository.findByCondition({
             email: email
-        });
+        })) as User;
         if (!user) {
             throw new HttpException('User not found', HttpStatus.UNAUTHORIZED);
         }
         const is_equal = bcrypt.compareSync(password, user.password);
-        if (!is_equal) {
+        if (!is_equal || user.isBlocked) {
             throw new HttpException('Invalid credentials', HttpStatus.UNAUTHORIZED);
         }
         return user;

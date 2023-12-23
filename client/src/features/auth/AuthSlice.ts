@@ -1,11 +1,14 @@
-import { LoginForm, RegisterForm, User } from '@/models';
+import { LoginForm, PayLoad, RegisterForm, User } from '@/models';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export interface AuthState {
     logging?: boolean;
     registering?: boolean;
     actionAuth: 'No action' | 'Success' | 'Failed';
-    currentUser?: User;
+    currentUser?: {
+        data: User;
+        token: string;
+    };
 }
 
 const initialState: AuthState = {
@@ -24,7 +27,7 @@ export const authSlice = createSlice({
             state.actionAuth = 'No action';
         },
 
-        loginSuccess(state, action: PayloadAction<User>) {
+        loginSuccess(state, action: PayloadAction<PayLoad>) {
             state.logging = false;
             state.actionAuth = 'Success';
             state.currentUser = action.payload;
@@ -37,7 +40,7 @@ export const authSlice = createSlice({
             state.registering = true;
             state.actionAuth = 'No action';
         },
-        registerSuccess(state, action: PayloadAction<User>) {
+        registerSuccess(state, action: PayloadAction<PayLoad>) {
             state.registering = false;
             state.actionAuth = 'Success';
             state.currentUser = action.payload;
