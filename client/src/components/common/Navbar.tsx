@@ -5,33 +5,36 @@ import {
     NavigationMenuList,
     navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-import { useState } from 'react';
 import { AiFillGitlab, AiFillHome, AiFillSecurityScan, AiFillTwitterCircle } from 'react-icons/ai';
 import { SiThemodelsresource } from 'react-icons/si';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useTheme } from '../theme-provider';
 import { Input } from '../ui/input';
+import { useEffect } from 'react';
 
 export const Navbar = () => {
-    const [activeItem, setActiveItem] = useState<string>('store');
     const { theme } = useTheme();
-    const handleItemClick = (value: string) => {
-        setActiveItem(value);
-    };
+    const location = useLocation();
+
+    // useEffect(() => {
+    //     console.log(location.pathname.length);
+    //     console.log(location.pathname.includes('faq'));
+    //     console.log(theme);
+    // }, [location, theme]);
 
     return (
         <>
-            <div className="border-y py-3 flex items-center justify-between">
+            <div className="px-left-right border-y py-3 flex items-center justify-between">
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem value="store">
                             <NavigationMenuLink
                                 asChild
                                 className={`${navigationMenuTriggerStyle()} ${
-                                    activeItem === 'store' &&
-                                    `${theme === 'light' ? 'bg-gray-100' : 'bg-[#27272A]'}`
+                                    location.pathname.includes('store') &&
+                                    location.pathname.length < 7 &&
+                                    `${theme === 'light' ? 'bg-gray-100' : 'bg-[#27272B]'} `
                                 }`}
-                                onClick={() => handleItemClick('store')}
                             >
                                 <NavLink to="">
                                     <AiFillHome size={30} />
@@ -43,10 +46,10 @@ export const Navbar = () => {
                             <NavigationMenuLink
                                 asChild
                                 className={`${navigationMenuTriggerStyle()} ${
-                                    activeItem === 'products' &&
-                                    `${theme === 'light' ? 'bg-gray-100' : 'bg-[#27272A]'}`
+                                    location.pathname.includes('products') &&
+                                    location.pathname.length > 9 &&
+                                    `${theme === 'light' ? 'bg-gray-100' : 'bg-[#27272B]'} `
                                 }`}
-                                onClick={() => handleItemClick('products')}
                             >
                                 <NavLink to="products">
                                     <AiFillGitlab size={30} />
@@ -58,10 +61,10 @@ export const Navbar = () => {
                             <NavigationMenuLink
                                 asChild
                                 className={`${navigationMenuTriggerStyle()} ${
-                                    activeItem === 'blog' &&
-                                    `${theme === 'light' ? 'bg-gray-100' : 'bg-[#27272A]'}`
+                                    location.pathname.includes('blog') &&
+                                    location.pathname.length > 9 &&
+                                    `${theme === 'light' ? 'bg-gray-100' : 'bg-[#27272B]'} `
                                 }`}
-                                onClick={() => handleItemClick('blog')}
                             >
                                 <NavLink to="blog">
                                     <AiFillTwitterCircle size={30} />
@@ -73,10 +76,10 @@ export const Navbar = () => {
                             <NavigationMenuLink
                                 asChild
                                 className={`${navigationMenuTriggerStyle()} ${
-                                    activeItem === 'service' &&
-                                    `${theme === 'light' ? 'bg-gray-100' : 'bg-[#27272A]'}`
+                                    location.pathname.includes('service') &&
+                                    location.pathname.length > 9 &&
+                                    `${theme === 'light' ? 'bg-gray-100' : 'bg-[#27272B]'} `
                                 }`}
-                                onClick={() => handleItemClick('service')}
                             >
                                 <NavLink to="service">
                                     <SiThemodelsresource size={30} />
@@ -88,10 +91,10 @@ export const Navbar = () => {
                             <NavigationMenuLink
                                 asChild
                                 className={`${navigationMenuTriggerStyle()} ${
-                                    activeItem === 'faq' &&
-                                    `${theme === 'light' ? 'bg-gray-100' : 'bg-[#27272A]'}`
+                                    location.pathname.includes('faq') &&
+                                    location.pathname.length > 9 &&
+                                    `${theme === 'light' ? 'bg-gray-100' : 'bg-[#27272B]'} `
                                 }`}
-                                onClick={() => handleItemClick('faq')}
                             >
                                 <NavLink to="faq">
                                     <AiFillSecurityScan size={30} />
@@ -103,7 +106,7 @@ export const Navbar = () => {
                 </NavigationMenu>
                 <Input
                     type="text"
-                    className={'w-[250px]'}
+                    className={'w-[250px] placeholder:text-muted-foreground '}
                     placeholder="Nhập nội dung để tìm kiếm"
                 />
             </div>

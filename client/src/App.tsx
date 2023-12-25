@@ -1,11 +1,15 @@
 import { ThemeProvider } from '@/components/theme-provider';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { AuthRouter, HomeRouter } from './Layouts';
 import './app.css';
 import { NotFound } from './components/common';
 import Welcome from './features/welcome';
-import { AuthRouter, HomeRouter } from './Layouts';
 
 function App() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <ThemeProvider defaultTheme="light" storageKey="theme">
             <div className="w-screen h-screen relative">

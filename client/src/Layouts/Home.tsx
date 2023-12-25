@@ -8,7 +8,7 @@ import Faq from '@/features/home/FAQ';
 export function HomeRouter() {
     return (
         <Routes>
-            <Route path="/" element={<Home />}>
+            <Route path="" element={<Home />}>
                 <Route path="products" element={<Products />} />
                 <Route path="blog" element={<Blog />} />
                 <Route path="service" element={<Service />} />

@@ -37,7 +37,7 @@ export const Header = () => {
                     theme === 'light' ? 'bg-black text-white' : 'bg-white text-black'
                 }`}
             >
-                <header className="px-[10%] h-full flex items-center justify-between relative">
+                <header className="px-left-right h-full flex items-center justify-between relative">
                     <span className=" uppercase font-medium">
                         order online or call us (+1800) 000 8808
                     </span>
@@ -81,7 +81,7 @@ export const Header = () => {
                     </div>
                 </header>
             </div>
-            <div className="px-[10%] flex items-center justify-between">
+            <div className="px-left-right flex items-center justify-between">
                 <img src="/assets/logo.png" alt="logo" className="w-[250px] h-[28px]" />
                 <div className="flex gap-10">
                     <div className="flex flex-col gap-0 items-center justify-center">
