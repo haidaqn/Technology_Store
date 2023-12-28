@@ -9,12 +9,22 @@ import Typed from 'react-typed';
 import type { Engine } from 'tsparticles-engine';
 import { loadSlim } from 'tsparticles-slim';
 import './styles.css';
+import { useAppDispatch } from '@/app/hooks';
+import { getCategories } from '@/app/Products/categoriesActions';
+import { getNewProducts, getSoldProducts } from '@/app/Products/productActions';
 
 export default function Welcome() {
+    const dispatch = useAppDispatch();
     const { theme } = useTheme();
     const [showTyped, setShowTyped] = useState(true);
     const particlesInit = useCallback(async (engine: Engine) => {
         await loadSlim(engine);
+    }, []);
+
+    useEffect(() => {
+        dispatch(getCategories());
+        dispatch(getNewProducts());
+        dispatch(getSoldProducts());
     }, []);
 
     useEffect(() => {

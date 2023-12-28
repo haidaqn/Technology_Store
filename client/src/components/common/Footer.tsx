@@ -29,69 +29,71 @@ export const Footer = () => {
             <div className="bg-[#191919]">
                 <div className="px-left-right py-6 text-white flex flex-col gap-3">
                     <table className="w-full">
-                        <tr className="flex">
-                            <td className="flex-2">
-                                <h1 className="px-3 border-l-[3px] border-red-700 uppercase text-lg font-medium">
-                                    Về chúng tôi
-                                </h1>
-                                <div className="mt-3 flex flex-col gap-2 ">
-                                    <span className="flex items-center">
-                                        <IoLocationOutline color="white" size={24} />
-                                        <small className="font-medium pl-1">Address:</small>
-                                        <small className="font-normal text-gray-400 pl-2">
-                                            Lo Giao Viet Hung Dong Anh Ha Noi
-                                        </small>
-                                    </span>
-                                    <span className="flex items-center">
-                                        <IoLocationOutline color="white" size={24} />
-                                        <small className="font-medium pl-1">Phone:</small>
-                                        <small className="font-normal text-gray-400 pl-2">
-                                            (+1234)56789xxx
-                                        </small>
-                                    </span>
-                                    <span className="flex items-center font-medium">
-                                        <IoLocationOutline color="white" size={24} />
-                                        <small className="font-medium pl-1">Mail:</small>
-                                        <small className="font-normal text-gray-400 pl-2">
-                                            haidang02032003@gmail.ccom
-                                        </small>
-                                    </span>
-                                </div>
-                            </td>
-                            <td className="flex-1">
-                                <h1 className="px-3 border-l-[3px] border-red-700 uppercase text-lg font-medium">
-                                    thông tin
-                                </h1>
-                                <div className="mt-3">
-                                    <ul className="text-gray-400">
-                                        <li>Typography</li>
-                                        <li>Gallery</li>
-                                        <li>Store Location</li>
-                                        <li>Today's Deals</li>
-                                        <li>Contact</li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td className="flex-1">
-                                <h1 className="px-3 border-l-[3px] border-red-700 uppercase text-lg font-medium">
-                                    who we are
-                                </h1>
-                                <div className="mt-3">
-                                    <ul className="text-gray-400">
-                                        <li>Help</li>
-                                        <li>Free Shipping</li>
-                                        <li>FAQs</li>
-                                        <li>Return & Exchange</li>
-                                        <li>Testimonials</li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td className="flex-1">
-                                <h1 className="px-3 border-l-[3px] border-red-700 uppercase text-lg font-medium">
-                                    #DIGITALWORLDSTORE
-                                </h1>
-                            </td>
-                        </tr>
+                        <thead>
+                            <tr className="flex">
+                                <td className="flex-2">
+                                    <h1 className="px-3 border-l-[3px] border-red-700 uppercase text-lg font-medium">
+                                        Về chúng tôi
+                                    </h1>
+                                    <div className="mt-3 flex flex-col gap-2 ">
+                                        <span className="flex items-center">
+                                            <IoLocationOutline color="white" size={24} />
+                                            <small className="font-medium pl-1">Address:</small>
+                                            <small className="font-normal text-gray-400 pl-2">
+                                                Lo Giao Viet Hung Dong Anh Ha Noi
+                                            </small>
+                                        </span>
+                                        <span className="flex items-center">
+                                            <IoLocationOutline color="white" size={24} />
+                                            <small className="font-medium pl-1">Phone:</small>
+                                            <small className="font-normal text-gray-400 pl-2">
+                                                (+1234)56789xxx
+                                            </small>
+                                        </span>
+                                        <span className="flex items-center font-medium">
+                                            <IoLocationOutline color="white" size={24} />
+                                            <small className="font-medium pl-1">Mail:</small>
+                                            <small className="font-normal text-gray-400 pl-2">
+                                                haidang02032003@gmail.ccom
+                                            </small>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td className="flex-1">
+                                    <h1 className="px-3 border-l-[3px] border-red-700 uppercase text-lg font-medium">
+                                        thông tin
+                                    </h1>
+                                    <div className="mt-3">
+                                        <ul className="text-gray-400">
+                                            <li>Typography</li>
+                                            <li>Gallery</li>
+                                            <li>Store Location</li>
+                                            <li>Today's Deals</li>
+                                            <li>Contact</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td className="flex-1">
+                                    <h1 className="px-3 border-l-[3px] border-red-700 uppercase text-lg font-medium">
+                                        who we are
+                                    </h1>
+                                    <div className="mt-3">
+                                        <ul className="text-gray-400">
+                                            <li>Help</li>
+                                            <li>Free Shipping</li>
+                                            <li>FAQs</li>
+                                            <li>Return & Exchange</li>
+                                            <li>Testimonials</li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td className="flex-1">
+                                    <h1 className="px-3 border-l-[3px] border-red-700 uppercase text-lg font-medium">
+                                        #DIGITALWORLDSTORE
+                                    </h1>
+                                </td>
+                            </tr>
+                        </thead>
                     </table>
                     <div className="pt-5 border-t-[1px] flex gap-4 items-center ">
                         <h1 className="px-3 border-l-[3px] border-red-700 uppercase text-lg font-medium">

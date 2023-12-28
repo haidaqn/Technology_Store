@@ -10,21 +10,14 @@ import { SiThemodelsresource } from 'react-icons/si';
 import { NavLink, useLocation } from 'react-router-dom';
 import { useTheme } from '../theme-provider';
 import { Input } from '../ui/input';
-import { useEffect } from 'react';
 
 export const Navbar = () => {
     const { theme } = useTheme();
     const location = useLocation();
 
-    // useEffect(() => {
-    //     console.log(location.pathname.length);
-    //     console.log(location.pathname.includes('faq'));
-    //     console.log(theme);
-    // }, [location, theme]);
-
     return (
         <>
-            <div className="px-left-right border-y py-3 flex items-center justify-between">
+            <div className="border-y py-3 flex items-center justify-between">
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem value="store">

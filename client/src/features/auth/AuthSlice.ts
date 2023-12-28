@@ -22,7 +22,7 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        login(state, action: PayloadAction<LoginForm>) {
+        login(state) {
             state.logging = true;
             state.actionAuth = 'No action';
         },
@@ -36,7 +36,7 @@ export const authSlice = createSlice({
             state.logging = false;
             state.actionAuth = 'Failed';
         },
-        register(state, action: PayloadAction<RegisterForm>) {
+        register(state) {
             state.registering = true;
             state.actionAuth = 'No action';
         },

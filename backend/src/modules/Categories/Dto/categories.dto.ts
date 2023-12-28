@@ -6,7 +6,6 @@ export class CreateCategories {
     @IsOptional()
     brand: string[] | null;
 }
-
 export class PaginationCategoriesDto {
     @IsNotEmpty()
     page: number;

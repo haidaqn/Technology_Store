@@ -1,5 +1,5 @@
 const Blog = () => {
-    return <div className="h-[1000px]">Blog</div>;
+    return <div className="">Blog</div>;
 };
 
 export default Blog;

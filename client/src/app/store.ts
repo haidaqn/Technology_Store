@@ -11,7 +11,7 @@ const persistConfig = {
     key: 'root',
     storage,
     debug: import.meta.env.MODE === 'development',
-    whitelist: ['auth', 'cart'],
+    whitelist: ['auth', 'categories', 'product'],
     version: import.meta.env.VITE_APP_VERSION,
 };
 

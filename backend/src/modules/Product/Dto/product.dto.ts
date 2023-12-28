@@ -19,4 +19,10 @@ export class PaginationProductDto {
     page: number;
     @IsNotEmpty()
     limit: number;
+
+    title: string;
+    priceTo: number;
+    priceEnd: number;
+    color: string;
+    sold: boolean;
 }

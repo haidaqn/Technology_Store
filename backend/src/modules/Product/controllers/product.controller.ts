@@ -1,13 +1,16 @@
 import { Body, Controller, Delete, Get, Post, Put, Query, Patch, Param } from '@nestjs/common';
 import { ProductRepository } from '../Repositories/product.repository';
 import { PaginationProductDto, ProductDto } from '../Dto/product.dto';
+import { ProductService } from '../Services/product.service';
 
 @Controller('product')
 export class ProductController {
-    constructor(private readonly productRepository: ProductRepository) {}
+    constructor(private readonly productService: ProductService) {}
 
     @Get('getAll')
-    async getAllProduct(@Query() { page, limit }: PaginationProductDto) {}
+    async getAllProduct(@Query() { page, limit, title, priceTo, priceEnd, color, sold }: PaginationProductDto) {
+        return await this.productService.getAllProduct(page, limit, title, priceTo, priceEnd, color, sold);
+    }
 
     @Get(':id')
     async getProductById(@Param('id') id: string) {}
