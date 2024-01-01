@@ -28,8 +28,9 @@ export class ProductService {
             searchCondition.color = { $regex: color, $options: 'i' };
         }
         try {
-            const sortCondition = sold ? { sold: -1, _id: -1, createdAt: -1 } : { _id: -1, createdAt: -1 };
-            console.log(sortCondition);
+            const sortCondition = sold
+                ? { totalRatings: -1, sold: -1, _id: -1, createdAt: -1 }
+                : { totalRatings: -1, _id: -1, createdAt: -1 };
             const count = await this.productRepository.countDocuments(searchCondition);
             const count_page = Math.ceil(count / limit);
             const data = await this.productRepository.getByCondition(searchCondition, null, {

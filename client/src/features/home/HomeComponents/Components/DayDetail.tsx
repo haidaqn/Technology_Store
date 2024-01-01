@@ -1,7 +1,7 @@
 import { useAppSelector } from '@/app/hooks';
 import { CountTime } from '@/components/common';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { TypeTime } from '@/models';
 import { handlePrice, renderStartNumber } from '@/utils';
 import { useEffect, useState } from 'react';
