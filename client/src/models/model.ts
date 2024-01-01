@@ -3,3 +3,9 @@ export interface BaseModel<T> {
     current_page: number;
     data: T[];
 }
+
+export interface TypeTime {
+    hour: number;
+    minutes: number;
+    seconds: number;
+}

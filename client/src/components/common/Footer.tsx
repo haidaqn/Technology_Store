@@ -1,9 +1,9 @@
 import { AiOutlineMail } from 'react-icons/ai';
-import { IoLocationOutline } from 'react-icons/io5';
-import { Input } from '../ui/input';
-import { RiVisaLine } from 'react-icons/ri';
 import { FaCcDinersClub, FaCcDiscover, FaCcMastercard, FaCcPaypal } from 'react-icons/fa';
+import { IoLocationOutline } from 'react-icons/io5';
+import { RiVisaLine } from 'react-icons/ri';
 import { SiAmericanexpress } from 'react-icons/si';
+import { Input } from '../ui/input';
 
 export const Footer = () => {
     return (
@@ -30,7 +30,7 @@ export const Footer = () => {
                 <div className="px-left-right py-6 text-white flex flex-col gap-3">
                     <table className="w-full">
                         <thead>
-                            <tr className="flex">
+                            <tr className="flex flex-wrap">
                                 <td className="flex-2">
                                     <h1 className="px-3 border-l-[3px] border-red-700 uppercase text-lg font-medium">
                                         Về chúng tôi

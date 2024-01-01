@@ -1,10 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
 import Home from '@/features/home';
-import Products from '@/features/home/Products';
 import Blog from '@/features/home/Blog';
-import Service from '@/features/home/Service';
 import Faq from '@/features/home/FAQ';
 import { HomeStore } from '@/features/home/HomeComponents';
+import Products from '@/features/home/Products';
+import Service from '@/features/home/Service';
+import { Route, Routes } from 'react-router-dom';
 
 export function HomeRouter() {
     return (

@@ -9,12 +9,12 @@ import { useTheme } from '@/components/theme-provider';
 
 export const SlidebarHome = () => {
     const iconSlidebar = [
-        <AiTwotonePrinter size={34} />,
-        <PiTelevisionSimple size={34} />,
-        <FcSmartphoneTablet size={34} />,
-        <MdOutlineSmartphone size={34} />,
-        <FaLaptopCode size={34} />,
-        <MdSpeakerGroup size={34} />,
+        <AiTwotonePrinter size={30} />,
+        <PiTelevisionSimple size={30} />,
+        <FcSmartphoneTablet size={30} />,
+        <MdOutlineSmartphone size={30} />,
+        <FaLaptopCode size={30} />,
+        <MdSpeakerGroup size={30} />,
     ];
 
     const { theme } = useTheme();
@@ -28,7 +28,7 @@ export const SlidebarHome = () => {
                         key={item._id}
                         className={`${
                             theme === 'light' ? 'hover:bg-gray-100' : 'hover:bg-[#27272B]'
-                        } flex items-center gap-3 text-2xl font-medium cursor-pointer rounded-md px-2 py-1`}
+                        } flex items-center gap-3 text-xl font-medium cursor-pointer rounded-md px-2 py-1`}
                     >
                         {iconSlidebar[index]}
                         <span>{item.title}</span>

@@ -1,35 +1,23 @@
+import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { ModeToggle } from '@/components/mode-toggle';
-import { useTheme } from '../theme-provider';
-import { Link } from 'react-router-dom';
+import { authActions } from '@/features/auth/AuthSlice';
+import { useInforUser } from '@/hooks/InfoUser';
 import { AiFillMail } from 'react-icons/ai';
 import { FaPhone } from 'react-icons/fa6';
 import { IoBagSharp } from 'react-icons/io5';
-import { useAppDispatch, useAppSelector } from '@/app/hooks';
-import { useInforUser } from '@/hooks/InfoUser';
+import { Link } from 'react-router-dom';
+import { useTheme } from '../theme-provider';
 import { Button } from '../ui/button';
-import { authActions } from '@/features/auth/AuthSlice';
-// import { useToast } from '@/components/ui/use-toast';
-// import { useEffect } from 'react';
 
 export const Header = () => {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const { actionAuth } = useAppSelector((state) => state.auth);
     const user = useInforUser();
-    // const { toast } = useToast();
     const handleLogout = () => {
         dispatch(authActions.logout());
     };
 
-    // useEffect(() => {
-    //     if (actionAuth === 'No action') {
-    //         toast({
-    //             title: 'Đăng xuất thành công',
-    //             description: 'Bạn đã đăng xuất thành công !',
-    //             variant: 'destructive',
-    //         });
-    //     }
-    // }, [toast, authActions, user]);
     return (
         <div className="flex flex-col gap-6">
             <div

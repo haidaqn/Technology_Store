@@ -1,8 +1,9 @@
-import { Icons } from '@/components/icons';
-
-export const renderStartNumber = (number: number): JSX.Element[] => {
+import { AiFillStar } from 'react-icons/ai';
+export const renderStartNumber = (number: number, size?: number): JSX.Element[] => {
     const star = [];
-    for (let i = 0; i < number; i++) star.push(<Icons.startOuline key={i} />);
-    for (let i = number; i < 5; i++) star.push(<Icons.start key={i} />);
-    return star;
+    for (let i = 1; i <= number; i++)
+        star.push(<AiFillStar size={size ? size : 30} color="red" key={i + Math.random()} />);
+    for (let i = number; i <= 5; i++)
+        star.push(<AiFillStar size={size ? size : 30} color="#ccc" key={i + Math.random()} />);
+    return star.slice(0, 5);
 };
